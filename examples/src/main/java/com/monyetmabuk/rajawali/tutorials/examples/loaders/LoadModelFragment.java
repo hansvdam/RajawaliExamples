@@ -56,13 +56,13 @@ public class LoadModelFragment extends AExampleFragment implements
 		ll.addView(mSeekBarZ);
 
 		mLayout.addView(ll);
-
+		onProgressChanged(null,0,false);
 		return mLayout;
 	}
 	public void onProgressChanged(SeekBar seekBar, int progress,
 								  boolean fromUser) {
 		mCameraOffset.setAll(mSeekBarX.getProgress()-50,
-							 mSeekBarY.getProgress()-100, mSeekBarZ.getProgress()-50);
+							 mSeekBarY.getProgress()-100, mSeekBarZ.getProgress()-25);
 		((LoadModelRenderer) mRenderer).setCameraOffset(mCameraOffset);
 	}
 
@@ -104,8 +104,9 @@ public class LoadModelFragment extends AExampleFragment implements
 //			mLight.setPower(500);
 //			getCurrentScene().addLight(mLight);
 
-			getCurrentCamera().setZ(20);
-			getCurrentCamera().setY(-50);
+//			getCurrentCamera().setZ(mCameraOffset.z);
+//			getCurrentCamera().setY(mCameraOffset.y);
+//			getCurrentCamera().setZ(mCameraOffset.x);
 			getCurrentCamera().setCameraPitch(-45);
 			getCurrentCamera().setFarPlane(1000);
 			LoaderOBJ objParser = new LoaderOBJ(mContext.getResources(),
