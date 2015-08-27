@@ -2,11 +2,13 @@
 <resources>
     <string-array name="rendererListArray">
         <item>Getting Started</item>
+        <item>LoadModel</item>
         <item>Skybox</item>
         <item>Collision Detection</item>
     </string-array>
     <string-array name="rendererListValues">
         <item>com.monyetmabuk.rajawali.tutorials.examples.general.BasicFragment.BasicRenderer</item>
+        <item>com.monyetmabuk.rajawali.tutorials.examples.loaders.LoadModelFragment</item>
         <item>com.monyetmabuk.rajawali.tutorials.examples.general.SkyboxFragment.SkyboxRenderer</item>
         <item>com.monyetmabuk.rajawali.tutorials.examples.general.CollisionDetectionFragment.CollisionDetectionRenderer</item>
     </string-array>

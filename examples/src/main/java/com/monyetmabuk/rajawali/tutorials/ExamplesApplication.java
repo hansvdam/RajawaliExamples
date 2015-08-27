@@ -1,85 +1,21 @@
 package com.monyetmabuk.rajawali.tutorials;
 
-import android.app.Application;
+import android.app.*;
 
-import com.monyetmabuk.rajawali.tutorials.examples.AExampleFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.about.CommunityFeedFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.about.MeetTheTeamFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.animation.AnimationFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.animation.BezierFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.animation.CatmullRomFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.animation.CoalesceAnimationFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.animation.ColorAnimationFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.animation.MD2Fragment;
-import com.monyetmabuk.rajawali.tutorials.examples.animation.SkeletalAnimationAWDFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.animation.SkeletalAnimationBlendingFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.animation.SkeletalAnimationMD5Fragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.ArcballCameraFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.BasicFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.interactive.FirstPersonCameraFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.ui.AnimatedTextureViewFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.ChaseCameraFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.CollisionDetectionFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.ColoredLinesFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.CurvesFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.DebugRendererFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.DebugVisualizerFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.LinesFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.OrthographicFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.SVGPathFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.SkyboxFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.SpiralsFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.TerrainFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.ThreeSixtyImagesFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.UniformDistributionFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.general.UsingGeometryDataFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.interactive.AccelerometerFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.interactive.ObjectPickingFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.interactive.TouchAndDragFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.lights.DirectionalLightFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.lights.MultipleLightsFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.lights.PointLightFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.lights.SpotLightFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.loaders.AsyncLoadModelFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.loaders.AwdFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.loaders.FBXFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.loaders.LoadModelFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.loaders.LoaderGCodeFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.AnimatedGIFTextureFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.BumpMappingFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.CustomMaterialShaderFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.CustomVertexShaderFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.MaterialsFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.RawShaderFilesFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.SpecularAndAlphaFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.SphereMapFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.ToonShadingFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.materials.VideoTextureFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.optimizations.ETC1TextureCompressionFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.optimizations.ETC2TextureCompressionFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.optimizations.Optimized2000PlanesFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.optimizations.TextureAtlasFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.optimizations.UpdateVertexBufferFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.postprocessing.BloomEffectFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.postprocessing.FogFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.postprocessing.GaussianBlurFilterFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.postprocessing.GreyScaleFilterFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.postprocessing.MultiPassFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.postprocessing.RenderToTextureFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.postprocessing.SepiaFilterFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.postprocessing.ShadowMappingFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.scene.SceneFrameCallbackFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.ui.AnimatedTextureViewFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.ui.CanvasTextFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.ui.TransparentSurfaceFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.ui.TwoDimensionalFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.ui.UIElementsFragment;
-import com.monyetmabuk.rajawali.tutorials.examples.ui.ViewToTextureFragment;
+import com.monyetmabuk.rajawali.tutorials.examples.*;
+import com.monyetmabuk.rajawali.tutorials.examples.about.*;
+import com.monyetmabuk.rajawali.tutorials.examples.animation.*;
+import com.monyetmabuk.rajawali.tutorials.examples.general.*;
+import com.monyetmabuk.rajawali.tutorials.examples.interactive.*;
+import com.monyetmabuk.rajawali.tutorials.examples.lights.*;
+import com.monyetmabuk.rajawali.tutorials.examples.loaders.*;
+import com.monyetmabuk.rajawali.tutorials.examples.materials.*;
+import com.monyetmabuk.rajawali.tutorials.examples.optimizations.*;
+import com.monyetmabuk.rajawali.tutorials.examples.postprocessing.*;
+import com.monyetmabuk.rajawali.tutorials.examples.scene.*;
+import com.monyetmabuk.rajawali.tutorials.examples.ui.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 public class ExamplesApplication extends Application {
 
@@ -121,7 +57,7 @@ public class ExamplesApplication extends Application {
 
 		// @formatter:off
 		ITEMS.put(Category.GENERAL, new ExampleItem[] { 
-				new ExampleItem("Getting Started", BasicFragment.class) 
+				new ExampleItem("Getting Started", LoadModelFragment.class)
 				, new ExampleItem("Skybox", SkyboxFragment.class)
 				, new ExampleItem("Collision Detection", CollisionDetectionFragment.class)
 				, new ExampleItem("Lines", LinesFragment.class)
